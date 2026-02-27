@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Buka Bersama Alumni PAQL</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Poppins',sans-serif;
+        }
+
+        body{
+            background: #0f2027;
+            background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+            color:white;
+            text-align:center;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* --- Efek Background 3D Floating Icons --- */
+        .bg-icons {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .bg-icons i {
+            position: absolute;
+            color: rgba(255, 211, 105, 0.1);
+            animation: float 15s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+        }
+
+        /* --- Konten --- */
+        section {
+            padding:60px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero{
+            min-height:100vh;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+        }
+
+        .hero h1{
+            font-size:38px;
+            margin-bottom:15px;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            text-transform: capitalize;
+        }
+
+        /* --- Card Glassmorphism --- */
+        .card{
+            background: rgba(255, 255, 255, 0.08);
+            padding:30px;
+            border-radius:20px;
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            max-width:600px;
+            margin:20px auto;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            transition: 0.3s;
+        }
+
+        /* --- Timeline Susunan Acara --- */
+        .timeline {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-left: 10px;
+            border-left: 2px solid #ffd369;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -7px;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            background: #ffd369;
+            border-radius: 50%;
+        }
+
+        .timeline-content {
+            padding-left: 20px;
+        }
+
+        .timeline-content span {
+            font-size: 14px;
+            font-weight: 600;
+            color: #ffd369;
+        }
+
+        .countdown{
+            display:flex;
+            justify-content:center;
+            gap:10px;
+            margin-top:25px;
+            flex-wrap: wrap;
+        }
+
+        .countdown div{
+            background: linear-gradient(145deg, #ffd369, #ffb703);
+            color:#333;
+            padding:12px;
+            border-radius:12px;
+            width:75px;
+        }
+
+        .btn{
+            display:inline-block;
+            margin-top:20px;
+            padding:12px 30px;
+            background:#ffd369;
+            color:#333;
+            border-radius:50px;
+            text-decoration:none;
+            font-weight:600;
+            transition:0.4s;
+            border:none;
+            cursor:pointer;
+        }
+
+        .btn-wa { background: #25d366; color: white; }
+
+        input, select{
+            width: 100%;
+            padding:12px;
+            border-radius:10px;
+            border: none;
+            margin-bottom: 10px;
+        }
+
+        .rekening-box{
+            background:rgba(255,211,105,0.1);
+            padding:15px;
+            border-radius:15px;
+            border: 1px dashed #ffd369;
+            margin: 15px 0;
+            cursor: pointer;
+        }
+
+        iframe{
+            width:100%;
+            height:300px;
+            border-radius:20px;
+        }
+
+        @media(max-width:600px){
+            .hero h1{ font-size:28px; }
+            .countdown div { width: 65px; font-size: 12px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="bg-icons" id="bgIcons"></div>
+
+<section class="hero">
+    <i class="fa-solid fa-moon fa-3x" style="color: #ffd369; margin-bottom: 20px;"></i>
+    <h1>Undangan Buka Bersama Alumni PAQL</h1>
+    <p>Sucikan hati, jalin silaturahmi di bulan suci.</p>
+    <a href="#konfirmasi" class="btn">Konfirmasi Kehadiran</a>
+</section>
+
+<section>
+    <div class="card">
+        <h2><i class="fa-solid fa-calendar-check"></i> Waktu & Lokasi</h2>
+        <hr style="margin: 15px 0; opacity: 0.1;">
+        <p><strong>📅 Tanggal:</strong> 19 Maret 2026</p>
+        <p><strong>⏰ Waktu:</strong> 15.00 WIB - Selesai</p>
+        <p><strong>📍 Tempat:</strong> Masjid Al-Hikmah, Kebumen</p>
+        <p><strong>👕 Dresscode:</strong> Putih bagi yang punya (Bebas untuk yang tidak punya baju putih)</p>
+
+        <div class="countdown" id="timer-container">
+            <div><span id="days">0</span> Hari</div>
+            <div><span id="hours">0</span> Jam</div>
+            <div><span id="minutes">0</span> Menit</div>
+            <div><span id="seconds">0</span> Detik</div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="card">
+        <h2><i class="fa-solid fa-list-ul"></i> Susunan Acara</h2>
+        <hr style="margin: 15px 0; opacity: 0.1;">
+        
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content"><br>Pembukaan</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content"><br>Sambutan</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content"><br>Pentas Seni</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content"><br>Games</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content"><br> Tausiyah Menjelang Berbuka</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content"><br> Dokumentasi</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content"><br> Persiapan Buka dll</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="konfirmasi">
+    <div class="card">
+        <h2><i class="fa-solid fa-user-check"></i> RSVP & Donasi</h2>
+        <form id="rsvpForm">
+            <input type="text" id="namaInput" name="Nama" placeholder="Nama Lengkap" required>
+            <select id="status" name="Status" required>
+                <option value="">-- Pilih Kehadiran --</option>
+                <option value="Hadir">Hadir</option>
+                <option value="Tidak Hadir">Tidak Hadir</option>
+            </select>
+
+            <div class="rekening-box" onclick="copyRekening()">
+                <p><strong>SEA BANK: 901028589285</strong></p>
+                <p>a.n Ulfatu Sangadah</p>
+                <small>(Klik untuk salin rekening)</small>
+            </div>
+
+            <button type="submit" id="submitBtn" class="btn">Kirim Data</button>
+        </form>
+
+        <p id="notif" style="margin-top:15px;"></p>
+
+        <div id="afterSubmit" style="display:none; margin-top: 20px;">
+            <p style="font-size: 13px;">Kirim bukti transfer ke WhatsApp:</p>
+            <a id="waLink" href="#" class="btn btn-wa" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i> Konfirmasi WA
+            </a>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2><i class="fa-solid fa-map-location"></i> Lokasi Peta</h2>
+    <div class="card">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.535688583446!2d109.5822033!3d-7.687775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7abe384840d9bf%3A0xbc69d6bdbd4907f5!2sMasjid%20Al%20Hikmah!5e0!3m2!1sid!2sid!4v1708945000000!5m2!1sid!2sid" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+</section>
+
+<footer>
+    Dibuat dengan ❤️ | Bukber 2026
+</footer>
+
+<script>
+// 1. Generate Floating Icons
+const bgIcons = document.getElementById('bgIcons');
+const icons = ['fa-moon', 'fa-star', 'fa-lantern', 'fa-mosque'];
+for (let i = 0; i < 20; i++) {
+    const icon = document.createElement('i');
+    icon.className = `fa-solid ${icons[Math.floor(Math.random() * icons.length)]}`;
+    icon.style.left = Math.random() * 100 + 'vw';
+    icon.style.fontSize = Math.random() * 20 + 10 + 'px';
+    icon.style.animationDelay = Math.random() * 10 + 's';
+    bgIcons.appendChild(icon);
+}
+
+// 2. Countdown Logic - Sinkronisasi 19 Maret 2026 Jam 15:00
+var eventDate = new Date("March 19, 2026 15:00:00").getTime();
+
+function updateCountdown() {
+    var now = new Date().getTime();
+    var distance = eventDate - now;
+
+    if (distance < 0) {
+        document.getElementById("timer-container").innerHTML = "<h3>Acara Sedang Berlangsung!</h3>";
+        return;
+    }
+
+    document.getElementById("days").innerHTML = Math.floor(distance / (1000 * 60 * 60 * 24));
+    document.getElementById("hours").innerHTML = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    document.getElementById("minutes").innerHTML = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    document.getElementById("seconds").innerHTML = Math.floor((distance % (1000 * 60)) / 1000);
+}
+
+setInterval(updateCountdown, 1000);
+updateCountdown();
+
+// 3. Copy Rekening
+function copyRekening() {
+    navigator.clipboard.writeText("901028589285");
+    alert("Rekening berhasil disalin!");
+}
+
+// 4. RSVP Logic
+const scriptURL = 'https://script.google.com/macros/s/AKfycbzugkc79IKSDv0idrLldITMYItllu-_zv7GcTOkA8Dws6rAB5Cc89AyOpVZdwtH7FeJ/exec';
+const form = document.getElementById('rsvpForm');
+const btn = document.getElementById('submitBtn');
+const afterSubmit = document.getElementById('afterSubmit');
+
+form.addEventListener('submit', e => {
+    e.preventDefault();
+    btn.disabled = true;
+    btn.innerHTML = "Mengirim...";
+    
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+          btn.innerHTML = "Terkirim!";
+          document.getElementById('notif').innerHTML = "Terima kasih! 🙏";
+          const nama = document.getElementById('namaInput').value;
+          document.getElementById('waLink').href = `https://wa.me/628238913324?text=Halo%20Admin,%20saya%20${encodeURIComponent(nama)}%20sudah%20isi%20form%20Bukber.`;
+          afterSubmit.style.display = 'block';
+          form.reset();
+      })
+      .catch(error => {
+          btn.disabled = false;
+          btn.innerHTML = "Coba Lagi";
+          alert("Gagal mengirim.");
+      });
+});
+</script>
+
+</body>
+</html>
